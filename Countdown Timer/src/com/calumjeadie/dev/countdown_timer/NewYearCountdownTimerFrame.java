@@ -26,7 +26,6 @@ public class NewYearCountdownTimerFrame extends CountdownTimerFrame {
             public void run() {
                 
                 NewYearCountdownTimerFrame frame = new NewYearCountdownTimerFrame();
-                frame.setVisible(true);
             }
         });
     }
