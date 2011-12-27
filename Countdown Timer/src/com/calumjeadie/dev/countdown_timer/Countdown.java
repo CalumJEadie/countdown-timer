@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.MouseAdapter;
@@ -91,6 +92,8 @@ public class Countdown {
                  frame.add(panel);
 
                  // Make full screen. Toggle between the device to make the window full screen on.
+                 //GraphicsConfiguration gc = frame.getGraphicsConfiguration();
+                 //GraphicsDevice gd = gc.getDevice();
                  GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
                  GraphicsDevice[] gds = ge.getScreenDevices();
                  GraphicsDevice gd = gds[screenDevice % gds.length];
