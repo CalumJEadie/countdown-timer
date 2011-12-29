@@ -32,8 +32,11 @@ public class Countdown {
     private Calendar targetDate;
     private JFrame frame;
     private JPanel panel;
+    private CountdownTimer countdown;
     private Color backgroundColor;
     private Color foregroundColor;
+    private Font font;
+    private String title;
     private int screenDevice = 0;
 
     public Countdown(Calendar targetDate) {
@@ -42,17 +45,19 @@ public class Countdown {
         
         this.backgroundColor = Color.BLACK;
         this.foregroundColor = Color.WHITE;
+        this.font = new Font(Font.MONOSPACED, Font.PLAIN, 200);
+        this.title = "Countdown Timer - (C) 2011 Calum J. Eadie; MIT License";
         
         setupGUI();
         
     }
     
-    public void setupGUI() {
+    private void setupGUI() {
         
         // Set up countdown.
-        CountdownTimer countdown = new CountdownTimer(targetDate);
+        countdown = new CountdownTimer(targetDate);
         countdown.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
-        countdown.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 200));
+        countdown.setFont(font);
         countdown.setHorizontalAlignment(SwingConstants.CENTER);
         countdown.setForeground(foregroundColor);
         
@@ -94,7 +99,7 @@ public class Countdown {
                  
                  frame = new JFrame();
           
-                 frame.setTitle("Countdown Timer");
+                 frame.setTitle(title);
                  //setMinimumSize(new Dimension(800, 400));
                  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                  frame.setUndecorated(true);
@@ -107,6 +112,9 @@ public class Countdown {
                  GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
                  GraphicsDevice[] gds = ge.getScreenDevices();
                  GraphicsDevice gd = gds[screenDevice % gds.length];
+                 
+                 countdown.setFont(font.deriveFont(getFontSize(gd.getDisplayMode().getWidth())));
+                 
                  gd.setFullScreenWindow(frame);
                  
                  frame.setVisible(true);
@@ -128,11 +136,13 @@ public class Countdown {
                 
                 frame = new JFrame();
          
-                frame.setTitle("Countdown Timer");
+                frame.setTitle(title);
                 //setMinimumSize(new Dimension(800, 400));
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 
                 frame.add(panel);
+                
+                countdown.setFont(font);
                 
                 frame.pack();
                 
@@ -143,6 +153,17 @@ public class Countdown {
             }
         });
         
+    }
+    
+    /*
+     * Calculated the font size for a given display width.
+     */
+    public static float getFontSize(int width) {
+        
+        // For Font.MONOSPACED font have height to width ratio of ~ 2.
+        // Have 8 characters, so for height h expect width of ~ 4h.
+        
+        return width/6;
     }
     
 }
