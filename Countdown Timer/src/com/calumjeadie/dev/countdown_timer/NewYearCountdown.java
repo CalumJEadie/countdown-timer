@@ -16,7 +16,7 @@ public class NewYearCountdown extends Countdown {
 
         Calendar now = Calendar.getInstance();
         Calendar newYearStart = Calendar.getInstance();
-        newYearStart.set(now.get(Calendar.YEAR)+1,0,0,0,0,0);
+        newYearStart.set(now.get(Calendar.YEAR)+1,Calendar.JANUARY,1,0,0,0);
         
         return newYearStart;
     }
