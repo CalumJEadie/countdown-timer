@@ -25,8 +25,8 @@ Usage
 
 Simply make sure you have Java installed and then download and run the appropriate JAR package.
 
-* [New Year Countdown Timer][1]
+* [New Year Countdown Timer][2]
 
 To toggle full screen click on the countdown. Repeatedly toggling full screen will cycle through monitors allowing the countdown to be displayed on an external monitor.
 
-[1]: https://github.com/CalumJEadie/countdown-timer/blob/master/NewYearCountdownTimer.jar
+[2]: https://github.com/CalumJEadie/countdown-timer/blob/master/NewYearCountdownTimer.jar
