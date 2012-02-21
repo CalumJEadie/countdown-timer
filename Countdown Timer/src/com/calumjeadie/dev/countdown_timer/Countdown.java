@@ -8,6 +8,7 @@
  * Contributors:
  *     Calum J. Eadie - initial API and implementation
  ******************************************************************************/
+
 package com.calumjeadie.dev.countdown_timer;
 
 import java.awt.BorderLayout;
