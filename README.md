@@ -2,12 +2,15 @@ countdown-timer
 ===============
 
 Calum J. Eadie
+
 <https://github.com/CalumJEadie>
 
 Intro
 -----
 
-Simple countdown timer that can display windowed or full screen. Supports multi screen displays and adjusts to make best use of screen space.
+For new year 2011 a friend needed a countdown timer for a new years party he was doing the tech for so I knocked together this simple countdown timer for him and learnt a fair bit about building a Java GUI along the way :).
+
+Can be displayed windowed or full screen. Supports multi screen displays and adjusts to make best use of screen space.
 
 ![Screenshot of windowed coundown timer][1]
 
@@ -16,14 +19,14 @@ Simple countdown timer that can display windowed or full screen. Supports multi 
 Licensing
 ---------
 
-(C) 2011, Calum J. Eadie
+(C) 2012, Calum J. Eadie
 
 MIT License
 
 Usage
 -----
 
-Simply make sure you have Java installed and then download and run the appropriate JAR package.
+Simply make sure you have Java installed, then download and run the appropriate JAR package.
 
 * [New Year Countdown Timer][2]
 
